@@ -56,7 +56,7 @@ class ExportService
         $counter = $fileCounter = 0;
         $count = $this->getFileCount($results->count(), $maxLinesInFile, $fileCounter);
 
-        $date = date(\DateTime::ISO8601);
+        $date = date(\DateTime::ATOM);
         $metadata = [
             'count' => $count,
             'date' => $date,
@@ -99,11 +99,11 @@ class ExportService
      */
     protected function getFilePath($filename): string
     {
-        if ($filename[0] == '/' || strstr($filename, ':') !== false) {
+        if ($filename[0] === DIRECTORY_SEPARATOR || strpos($filename, ':') !== false) {
             return $filename;
         }
 
-        return getcwd() . '/' . $filename;
+        return getcwd() . DIRECTORY_SEPARATOR . $filename;
     }
 
     protected function getWriter(string $filename, int $count): JsonWriter

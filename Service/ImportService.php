@@ -65,11 +65,11 @@ class ImportService
      */
     protected function getFilePath($filename)
     {
-        if ($filename[0] == '/' || strstr($filename, ':') !== false) {
+        if ($filename[0] === DIRECTORY_SEPARATOR || strpos($filename, ':') !== false) {
             return $filename;
         }
 
-        return realpath(getcwd() . '/' . $filename);
+        return realpath(getcwd() . DIRECTORY_SEPARATOR . $filename);
     }
 
     protected function getReader(IndexService $manager, $filename, $options): JsonReader

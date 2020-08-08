@@ -41,10 +41,6 @@ class IndexDropCommand extends AbstractIndexServiceAwareCommand
         if ($input->getOption('force')) {
             $index = $this->getIndex($input->getOption(parent::INDEX_OPTION));
 
-            $client =
-
-            $result = $index->dropIndex();
-
             $io->text(
                 sprintf(
                     'The index <comment>`%s`</comment> was successfully dropped.',
