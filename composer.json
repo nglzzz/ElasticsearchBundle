@@ -12,6 +12,7 @@
     ],
     "repositories": [
         {
+            "name": "ongr/elasticsearch-dsl",
             "type": "vcs",
             "url": "https://github.com/nglzzz/ElasticsearchDSL"
         }
@@ -32,7 +33,7 @@
         "doctrine/collections": "^1.5",
         "monolog/monolog": "^1.24",
         "elasticsearch/elasticsearch": "^7.0",
-        "ongr/elasticsearch-dsl": "^7.0"
+        "ongr/elasticsearch-dsl": "7.2.1.x-dev as 7.2.1"
     },
     "require-dev": {
         "mikey179/vfsstream": "~1.6",
